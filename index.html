@@ -7,10 +7,8 @@
   <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
   <link rel="stylesheet" href="css/default.css">
 </head>
-<body ng-app="app" ng-cloak>
-  <!--
-    Your HTML content here
-  -->
+<body ng-app="app" layout="row" ng-cloak>
+  <ui-view></ui-view><!-- current view content -->
 
   <!-- Angular Material requires Angular.js Libraries -->
   <script src="bower_components/angular/angular.min.js"></script>
@@ -24,5 +22,6 @@
   <script src="bower_components/angular-material/angular-material.min.js"></script>
 
   <script src="js/app/app.js"></script>
+  <script src="js/app/controllers/HomeController.js"></script>
 </body>
 </html>
