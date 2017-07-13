@@ -10,28 +10,28 @@ angular
         templateUrl: 'views/home.html',
         controller: 'HomeController as ctrl' //set controller for this route (equavelent of using <ng-controller="..."> in template)
       })
-      .state('home.topSellers', {
-        url: 'top',
+      .state('topSellers', {
+        url: '/top',
         templateUrl: 'views/games/index.html',
         controller: 'GamesController as ctrl'
       })
-      .state('home.newReleases', {
-        url: 'new',
+      .state('newReleases', {
+        url: '/new',
         templateUrl: 'views/games/index.html',
         controller: 'GamesController as ctrl'
       })
-      .state('home.specials', {
-        url: 'specials',
+      .state('specials', {
+        url: '/specials',
         templateUrl: 'views/games/index.html',
         controller: 'GamesController as ctrl'
       })
-      .state('home.comingSoon', {
-        url: 'coming',
+      .state('comingSoon', {
+        url: '/coming',
         templateUrl: 'views/games/index.html',
         controller: 'GamesController as ctrl'
       })
-      .state('home.game', {
-        url: 'games/:id',
+      .state('game', {
+        url: '/games/:id',
         templateUrl: 'views/games/show.html',
         controller: 'GameController as ctrl'
       });

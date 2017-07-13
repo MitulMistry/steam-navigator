@@ -8,7 +8,18 @@
   <link rel="stylesheet" href="css/default.css">
 </head>
 <body ng-app="app" layout="row" ng-cloak>
-  <ui-view></ui-view><!-- current view content -->
+  <md-sidenav layout="column" class="sidenav1" md-is-locked-open='true'>
+    <h1>SideNav</h1>
+    <a href ui-sref="home">Home</a>
+    <a href ui-sref="topSellers">Top Sellers</a>
+    <a href ui-sref="newReleases">New Releases</a>
+    <a href ui-sref="specials">Specials</a>
+    <a href ui-sref="comingSoon">Coming Soon</a>
+  </md-sidenav>
+
+  <md-content flex layout="column">
+    <ui-view></ui-view><!-- current view content -->
+  </md-content>
 
   <!-- Angular Material requires Angular.js Libraries -->
   <script src="bower_components/angular/angular.min.js"></script>
@@ -23,5 +34,7 @@
 
   <script src="js/app/app.js"></script>
   <script src="js/app/controllers/HomeController.js"></script>
+  <script src="js/app/controllers/GameController.js"></script>
+  <script src="js/app/controllers/GamesController.js"></script>
 </body>
 </html>
