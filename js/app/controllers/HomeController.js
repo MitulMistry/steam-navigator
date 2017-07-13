@@ -1,5 +1,9 @@
-function HomeController() {
+function HomeController($scope, $mdSidenav) {
   var ctrl = this;
+
+  $scope.toggleSideNav = function() {
+    $mdSidenav('left').toggle();
+  };
 }
 
 angular
