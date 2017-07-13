@@ -5,15 +5,10 @@ angular
   ])
   .config(function($stateProvider, $urlRouterProvider){ //inject $stateProvider for ui-router and $urlRouterProvider for 'otherwise' method
     $stateProvider
-      .state('home', { //create a ui-router state
-        url: '/',
-        templateUrl: 'views/home.html',
-        controller: 'HomeController as ctrl' //set controller for this route (equavelent of using <ng-controller="..."> in template)
-      })
-      .state('topSellers', {
+      .state('topSellers', { //create a ui-router state
         url: '/top',
         templateUrl: 'views/games/index.html',
-        controller: 'GamesController as ctrl'
+        controller: 'GamesController as ctrl' //set controller for this route (equavelent of using <ng-controller="..."> in template)
       })
       .state('newReleases', {
         url: '/new',
@@ -36,5 +31,5 @@ angular
         controller: 'GameController as ctrl'
       });
 
-      $urlRouterProvider.otherwise('/'); //default route
+      $urlRouterProvider.otherwise('/top'); //default route
   });
