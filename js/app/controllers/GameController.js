@@ -1,4 +1,4 @@
-function GameController() {
+function GameController(game) { //game is injected from app.js resolve
   var ctrl = this;
 }
 
