@@ -1,7 +1,7 @@
 var API_URL = 'http://store.steampowered.com/api';
 var featuredCategories;
 
-function GamesService($http, $sce) {
+function GamesService($http) {
   this.getFeaturedCategories = function() {
     if (!featuredCategories) { //If the response hasn't already been stored
       featuredCategories = $http.get(API_URL + '/featuredcategories');
@@ -12,19 +12,39 @@ function GamesService($http, $sce) {
   }
 
   this.getTopSellers = function() {
-    return this.getFeaturedCategories()["top_sellers"];
+    this.getFeaturedCategories().then(function successCallback(response) {
+      return response["data"]["top_sellers"]["items"];
+    }, function errorCallback(response) {
+      console.log("API error");
+      console.log(response);
+    });
   }
 
   this.getNewReleases = function() {
-    return this.getFeaturedCategories()["new_releases"];
+    this.getFeaturedCategories().then(function successCallback(response) {
+      return response["data"]["new_releases"]["items"];
+    }, function errorCallback(response) {
+      console.log("API error");
+      console.log(response);
+    });
   }
 
   this.getSpecials = function() {
-    return this.getFeaturedCategories()["specials"];
+    this.getFeaturedCategories().then(function successCallback(response) {
+      return response["data"]["specials"]["items"];
+    }, function errorCallback(response) {
+      console.log("API error");
+      console.log(response);
+    });
   }
 
   this.getComingSoon = function() {
-    return this.getFeaturedCategories()["coming_soon"];
+    this.getFeaturedCategories().then(function successCallback(response) {
+      return response["data"]["coming_soon"]["items"];
+    }, function errorCallback(response) {
+      console.log("API error");
+      console.log(response);
+    });
   }
 
   this.getGame = function(id) {
