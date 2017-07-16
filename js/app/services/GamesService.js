@@ -12,39 +12,48 @@ function GamesService($http) {
   }
 
   this.getTopSellers = function() {
-    this.getFeaturedCategories().then(function successCallback(response) {
+    var data = this.getFeaturedCategories().then(function successCallback(response) {
+      console.log(response["data"]["top_sellers"]["items"]);
       return response["data"]["top_sellers"]["items"];
     }, function errorCallback(response) {
       console.log("API error");
       console.log(response);
     });
+
+    return data;
   }
 
   this.getNewReleases = function() {
-    this.getFeaturedCategories().then(function successCallback(response) {
+    var data = this.getFeaturedCategories().then(function successCallback(response) {
       return response["data"]["new_releases"]["items"];
     }, function errorCallback(response) {
       console.log("API error");
       console.log(response);
     });
+
+    return data;
   }
 
   this.getSpecials = function() {
-    this.getFeaturedCategories().then(function successCallback(response) {
+    var data = this.getFeaturedCategories().then(function successCallback(response) {
       return response["data"]["specials"]["items"];
     }, function errorCallback(response) {
       console.log("API error");
       console.log(response);
     });
+
+    return data;
   }
 
   this.getComingSoon = function() {
-    this.getFeaturedCategories().then(function successCallback(response) {
+    var data = this.getFeaturedCategories().then(function successCallback(response) {
       return response["data"]["coming_soon"]["items"];
     }, function errorCallback(response) {
       console.log("API error");
       console.log(response);
     });
+
+    return data;
   }
 
   this.getGame = function(id) {
