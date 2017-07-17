@@ -13,7 +13,6 @@ function GamesService($http) {
 
   this.getTopSellers = function() {
     var data = this.getFeaturedCategories().then(function successCallback(response) {
-      console.log(response["data"]["top_sellers"]["items"]);
       return response["data"]["top_sellers"]["items"];
     }, function errorCallback(response) {
       console.log("API error");

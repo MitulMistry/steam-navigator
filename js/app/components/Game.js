@@ -5,7 +5,6 @@ var Game = {
   },
   controller: function() { //can add functionality to a controller for this component by injecting dependencies such as a service
     var ctrl = this;
-    console.log(this);
   },
   controllerAs: 'game' //sets controller to be refered to as game in the template
 };
