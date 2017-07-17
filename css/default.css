@@ -10,6 +10,19 @@ h1 {
   letter-spacing: 4px;
 }
 
+h2 {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: yellow;
+}
+
 md-sidenav  {
   width: 225px;
   height: 100%;
@@ -20,6 +33,10 @@ md-sidenav  {
   background: -o-linear-gradient(#3BBA4D, #1C5C3D); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(#3BBA4D, #1C5C3D); /* For Firefox 3.6 to 15 */
   background: linear-gradient(#3BBA4D, #1C5C3D); /* Standard syntax */
+}
+
+md-sidenav a {
+  font-size: 1.1em;
 }
 
 md-content {
