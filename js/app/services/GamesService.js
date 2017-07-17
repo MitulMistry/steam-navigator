@@ -56,9 +56,16 @@ function GamesService($http) {
   }
 
   this.getGame = function(id) {
-    return $http.get(API_URL + '/appdetails/', {
+    var data = $http.get(API_URL + '/appdetails/', {
       params: { appids: id }
+    }).then(function successCallback(response) {
+      return response["data"][id.toString()];
+    }, function errorCallback(response) {
+      console.log("API error");
+      console.log(response);
     });
+
+    return data;
   }
 }
 
