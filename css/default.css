@@ -23,6 +23,10 @@ a:hover {
   color: yellow;
 }
 
+s {
+  color: gray;
+}
+
 md-sidenav  {
   width: 225px;
   height: 100%;
