@@ -74,6 +74,8 @@ md-sidenav a {
 md-content {
   color: white;
   background-color: #222222;
+  background-image: url("../img/bg01.png");
+  background-repeat: repeat;
   height: 100%;
   padding: 20px;
 }
