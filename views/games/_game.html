@@ -1,4 +1,4 @@
 <div class="game">
-  <a href ui-sref="game({id: game.data.id })"><img ng-src="{{ game.data.large_capsule_image }}" width="300"></a>
+  <a href ui-sref="game({id: game.data.id })"><img ng-src="{{ game.data.large_capsule_image }}"></a>
   <p ng-if="game.data.final_price > 0">{{ game.data.final_price / 100 | currency : "$" : 2 }} <s class="" ng-if="game.data.discounted">{{ game.data.original_price / 100 | currency : "$" : 2  }}</s></p>
 </div>

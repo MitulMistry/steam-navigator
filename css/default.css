@@ -27,6 +27,15 @@ s {
   color: gray;
 }
 
+.game {
+  margin: 6px;
+}
+
+.game img { /* make game images responsive */
+  width: 100%;
+  height: auto;
+}
+
 md-sidenav  {
   width: 225px;
   height: 100%;
