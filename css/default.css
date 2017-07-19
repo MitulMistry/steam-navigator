@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -12,7 +12,7 @@ h1 {
 
 h2 {
   text-transform: uppercase;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
 }
 
 a {
@@ -30,6 +30,10 @@ a:hover {
 
 s {
   color: gray;
+}
+
+.normal-weight {
+  font-weight: 400;
 }
 
 .game {
@@ -61,7 +65,7 @@ s {
 }
 
 md-sidenav  {
-  width: 225px;
+  width: 250px;
   height: 100%;
   /*padding: 20px;*/
   padding: 20px 0 20px 0;
@@ -74,13 +78,17 @@ md-sidenav  {
 }
 
 md-sidenav h2 {
+  font-size: 1.1em;
+  text-align: center;
   padding: 0 20px 0 20px;
+  margin: 20px 0 20px 0;
 }
 
 md-sidenav a {
   font-size: 1.2em;
+  text-transform: uppercase;
   background-color: black;
-  padding: 5px 20px 5px 20px;
+  padding: 5px 50px 5px 50px;
 }
 
 md-sidenav a:hover {
@@ -95,6 +103,11 @@ md-sidenav a.active {
 md-sidenav a.active:hover {
   color: black;
   background-color: none;
+}
+
+.nav-black-spacer {
+  background-color: black;
+  height: 5px;
 }
 
 md-content {
