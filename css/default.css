@@ -17,10 +17,15 @@ h2 {
 
 a {
   color: white;
+  text-decoration: none;
+  transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -webkit-transition: all 0.1s linear;
 }
 
 a:hover {
-  color: yellow;
+  color: #3BBA4D;
 }
 
 s {
@@ -58,7 +63,8 @@ s {
 md-sidenav  {
   width: 225px;
   height: 100%;
-  padding: 20px;
+  /*padding: 20px;*/
+  padding: 20px 0 20px 0;
 
   background: #3BBA4D; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(#3BBA4D, #1C5C3D); /* For Safari 5.1 to 6.0 */
@@ -67,8 +73,28 @@ md-sidenav  {
   background: linear-gradient(#3BBA4D, #1C5C3D); /* Standard syntax */
 }
 
+md-sidenav h2 {
+  padding: 0 20px 0 20px;
+}
+
 md-sidenav a {
-  font-size: 1.1em;
+  font-size: 1.2em;
+  background-color: black;
+  padding: 5px 20px 5px 20px;
+}
+
+md-sidenav a:hover {
+  background-color: #161616;
+}
+
+md-sidenav a.active {
+  color: black;
+  background-color: white;
+}
+
+md-sidenav a.active:hover {
+  color: black;
+  background-color: none;
 }
 
 md-content {
