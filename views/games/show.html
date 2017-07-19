@@ -1,4 +1,7 @@
 <h1>{{ ctrl.game.data.name }}</h1>
 <img ng-src="{{ ctrl.game.data.header_image }}">
 <p><a ng-href="http://store.steampowered.com/app/{{ ctrl.game.data.steam_appid }}" target="_blank">View on Steam Store</a></p>
-<p>{{ ctrl.game.data.short_description }}</p>
+<!-- <p>{{ ctrl.game.data.short_description }}</p> -->
+<p ng-bind-html="shortDescription"></p>
+
+<!-- <div ng-if="showDetailedDescription" ng-bind-html="detailedDescription"></div> -->
