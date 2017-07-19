@@ -1,6 +1,20 @@
-function GamesController(games, $scope) { //games are injected from app.js resolve
+function GamesController(games, $scope, $state) { //games are injected from app.js resolve
   var ctrl = this;
   ctrl.games = games;
+
+  ctrl.getStateName = function() {
+    var stateName = $state.current.name;
+
+    if (stateName === 'topSellers') {
+      return 'Top Sellers';
+    } else if(stateName === 'newReleases') {
+      return 'New Releases';
+    } else if(stateName === 'specials') {
+      return 'Specials';
+    } else if(stateName === 'comingSoon') {
+      return 'Coming Soon';
+    }
+  }
 
   ctrl.createGrid = function(columns) { //grid needs to be something like: $scope.grid = [[1,2,3],[4,5,6],[7,8,9]];
     var returnGrid = [];
