@@ -64,6 +64,16 @@ s {
   float: right;
 }
 
+.screenshot {
+  width: 100%;
+  height: auto;
+}
+
+.screenshot-container {
+  /*margin: 3px;*/
+  margin: 2px 5px 2px 5px;
+}
+
 .game-secondary-text {
   color: #999999;
 }

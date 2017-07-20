@@ -1,9 +1,11 @@
-function GameController(game, $scope, $sce) { //game is injected from app.js resolve
+function GameController(game, $scope, $sce, GridService) { //game is injected from app.js resolve
   var ctrl = this;
   ctrl.game = game;
 
   $scope.shortDescription = $sce.trustAsHtml(game.data.short_description); //https://stackoverflow.com/a/31333196
   $scope.detailedDescription = $sce.trustAsHtml(game.data.detailed_description);
+
+  $scope.screenshotGrid = GridService.createGrid(game.data.screenshots, 4);
 
   $scope.getDevelopers = function() {
     return game.data.developers.join(', ');

@@ -7,8 +7,22 @@
 
 <div ng-if="ctrl.game.data.screenshots.length > 0">
   <h2>Screenshots</h2>
-  <a ng-repeat="screenshot in ctrl.game.data.screenshots" ng-href="{{ screenshot.path_full}}" target="_blank"><img ng-src="{{ screenshot.path_thumbnail }}"></a>
+  <!-- <a ng-repeat="screenshot in ctrl.game.data.screenshots" ng-href="{{ screenshot.path_full}}" target="_blank"><img ng-src="{{ screenshot.path_thumbnail }}"></a> -->
+
+  <section layout-fill layout="column">
+    <div ng-repeat="row in screenshotGrid" flex layout="row">
+      <!-- <game data="game" ng-repeat="game in row"></game> -->
+      <div ng-repeat="screenshot in row" class="screenshot-container"><a ng-href="{{ screenshot.path_full}}" target="_blank"><img ng-src="{{ screenshot.path_thumbnail }}" class="screenshot"></a></div>
+    </div>
+  </section>
+
 </div>
+
+<section layout-fill layout="column">
+  <div ng-repeat="row in grid" flex layout="row">
+    <game data="game" ng-repeat="game in row"></game>
+  </div>
+</section>
 
 <p class="game-secondary-text"><strong>Release Date:</strong> {{ ctrl.game.data.release_date.date }}
 </br><strong>Platforms:</strong> <i class="fa fa-windows" aria-hidden="true" title="Windows" ng-if="ctrl.game.data.platforms.windows"></i><i class="fa fa-apple" aria-hidden="true" title="Mac" ng-if="ctrl.game.data.platforms.mac"></i><i class="fa fa-linux" aria-hidden="true" title="Linux + SteamOS" ng-if="ctrl.game.data.platforms.linux"></i></p>
