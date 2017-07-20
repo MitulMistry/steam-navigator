@@ -6,27 +6,27 @@ function GameController(game, $scope, $sce) { //game is injected from app.js res
   $scope.detailedDescription = $sce.trustAsHtml(game.data.detailed_description);
 
   $scope.getDevelopers = function() {
-    return game.data.developers.join();
+    return game.data.developers.join(', ');
   }
 
   $scope.getPublishers = function() {
-    return game.data.publishers.join();
+    return game.data.publishers.join(', ');
   }
 
   $scope.getCategories = function() {
-    var string = new String();
-    game.data.categories.forEach(function(category) {
-      string += (category.description + ', ');
+    var array = game.data.categories.map(function(category) {
+      return category.description;
     });
-    return string;
+
+    return array.join(', ');
   }
 
   $scope.getGenres = function() {
-    var string = new String();
-    game.data.genres.forEach(function(genre) {
-      string += (genre.description + ', ');
+    var array = game.data.genres.map(function(genre) {
+      return genre.description;
     });
-    return string;
+
+    return array.join(', ');
   }
 }
 
