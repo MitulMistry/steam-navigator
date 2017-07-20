@@ -41,7 +41,7 @@ s {
 }
 
 .game img { /* make game images responsive */
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 
@@ -64,8 +64,13 @@ s {
   float: right;
 }
 
+.image-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
 .screenshot {
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 

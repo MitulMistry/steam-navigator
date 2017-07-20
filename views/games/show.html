@@ -1,5 +1,5 @@
 <h1>{{ ctrl.game.data.name }}</h1>
-<img ng-src="{{ ctrl.game.data.header_image }}">
+<img ng-src="{{ ctrl.game.data.header_image }}" class="image-responsive">
 <p><md-button ng-href="http://store.steampowered.com/app/{{ ctrl.game.data.steam_appid }}" target="_blank">View on Steam Store</md-button></p>
 <p ng-bind-html="shortDescription"></p>
 
