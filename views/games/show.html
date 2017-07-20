@@ -5,8 +5,13 @@
 
 <!-- <div ng-if="showDetailedDescription" ng-bind-html="detailedDescription"></div> -->
 
+<div ng-if="ctrl.game.data.screenshots.length > 0">
+  <h2>Screenshots</h2>
+  <a ng-repeat="screenshot in ctrl.game.data.screenshots" ng-href="{{ screenshot.path_full}}" target="_blank"><img ng-src="{{ screenshot.path_thumbnail }}"></a>
+</div>
+
 <p class="game-secondary-text"><strong>Release Date:</strong> {{ ctrl.game.data.release_date.date }}
-</br><strong>Platforms:</strong> <i class="fa fa-windows" aria-hidden="true" ng-if="ctrl.game.data.platforms.windows"></i><i class="fa fa-apple" aria-hidden="true" ng-if="ctrl.game.data.platforms.mac"></i><i class="fa fa-linux" aria-hidden="true" ng-if="ctrl.game.data.platforms.linux"></i></p>
+</br><strong>Platforms:</strong> <i class="fa fa-windows" aria-hidden="true" title="Windows" ng-if="ctrl.game.data.platforms.windows"></i><i class="fa fa-apple" aria-hidden="true" title="Mac" ng-if="ctrl.game.data.platforms.mac"></i><i class="fa fa-linux" aria-hidden="true" title="Linux + SteamOS" ng-if="ctrl.game.data.platforms.linux"></i></p>
 
 <p class="game-secondary-text"><strong>Developer:</strong> {{ getDevelopers() }}
 </br><strong>Publisher:</strong> {{ getPublishers() }}</p>
