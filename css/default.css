@@ -82,6 +82,16 @@ s {
   margin: 0 3px 0 3px;
 }
 
+.md-button {
+  border: 1px solid white;
+  min-width: 44px;
+}
+
+.md-button:hover {
+  color: #3BBA4D;
+  border-color: #3BBA4D;
+}
+
 md-sidenav  {
   width: 250px;
   height: 100%;

@@ -1,21 +1,17 @@
 <h1>{{ ctrl.game.data.name }}</h1>
 <img ng-src="{{ ctrl.game.data.header_image }}">
-<p><a ng-href="http://store.steampowered.com/app/{{ ctrl.game.data.steam_appid }}" target="_blank">View on Steam Store</a></p>
+<p><md-button ng-href="http://store.steampowered.com/app/{{ ctrl.game.data.steam_appid }}" target="_blank">View on Steam Store</md-button></p>
 <p ng-bind-html="shortDescription"></p>
 
 <!-- <div ng-if="showDetailedDescription" ng-bind-html="detailedDescription"></div> -->
 
 <div ng-if="ctrl.game.data.screenshots.length > 0">
   <h2>Screenshots</h2>
-  <!-- <a ng-repeat="screenshot in ctrl.game.data.screenshots" ng-href="{{ screenshot.path_full}}" target="_blank"><img ng-src="{{ screenshot.path_thumbnail }}"></a> -->
-
   <section layout-fill layout="column">
     <div ng-repeat="row in screenshotGrid" flex layout="row">
-      <!-- <game data="game" ng-repeat="game in row"></game> -->
       <div ng-repeat="screenshot in row" class="screenshot-container"><a ng-href="{{ screenshot.path_full}}" target="_blank"><img ng-src="{{ screenshot.path_thumbnail }}" class="screenshot"></a></div>
     </div>
   </section>
-
 </div>
 
 <section layout-fill layout="column">
