@@ -4,6 +4,8 @@ function GameController(game, $scope, $sce) { //game is injected from app.js res
 
   $scope.shortDescription = $sce.trustAsHtml(game.data.short_description); //https://stackoverflow.com/a/31333196
   $scope.detailedDescription = $sce.trustAsHtml(game.data.detailed_description);
+
+
 }
 
 angular

@@ -64,6 +64,14 @@ s {
   float: right;
 }
 
+.game-secondary-text {
+  color: #999999;
+}
+
+.game-secondary-text i {
+  margin: 0 3px 0 3px;
+}
+
 md-sidenav  {
   width: 250px;
   height: 100%;

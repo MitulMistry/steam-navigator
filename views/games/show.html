@@ -1,7 +1,15 @@
 <h1>{{ ctrl.game.data.name }}</h1>
 <img ng-src="{{ ctrl.game.data.header_image }}">
 <p><a ng-href="http://store.steampowered.com/app/{{ ctrl.game.data.steam_appid }}" target="_blank">View on Steam Store</a></p>
-<!-- <p>{{ ctrl.game.data.short_description }}</p> -->
 <p ng-bind-html="shortDescription"></p>
 
 <!-- <div ng-if="showDetailedDescription" ng-bind-html="detailedDescription"></div> -->
+
+<p class="game-secondary-text"><strong>Release Date:</strong> {{ ctrl.game.data.release_date.date }}
+</br><strong>Platforms:</strong> <i class="fa fa-windows" aria-hidden="true" ng-if="ctrl.game.data.platforms.windows"></i><i class="fa fa-apple" aria-hidden="true" ng-if="ctrl.game.data.platforms.mac"></i><i class="fa fa-linux" aria-hidden="true" ng-if="ctrl.game.data.platforms.linux"></i></p>
+
+<p class="game-secondary-text"><strong>Developer:</strong> {{ ctrl.game.data.developers }}
+</br><strong>Publisher:</strong> {{ ctrl.game.data.publishers }}</p>
+
+<p class="game-secondary-text"><strong>Categories:</strong> {{ ctrl.game.data.categories }}
+</br><strong>Genres:</strong> {{ ctrl.game.data.genres }}</p>
