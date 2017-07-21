@@ -60,8 +60,23 @@ s {
   background: linear-gradient(#3BBA4D, #1C5C3D); /* Standard syntax */
 }
 
+.game-show-discount-percent {
+  /*font-size: 1.2em;*/
+  padding: 2px 7px 2px 7px;
+  margin-right: 3px;
+  background: #3BBA4D; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#3BBA4D, #1C5C3D); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#3BBA4D, #1C5C3D); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#3BBA4D, #1C5C3D); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#3BBA4D, #1C5C3D); /* Standard syntax */
+}
+
 .game-pricing {
   float: right;
+}
+
+.game-show-pricing {
+  font-size: 1.1em;
 }
 
 .image-responsive {
@@ -90,6 +105,7 @@ s {
 .md-button {
   border: 1px solid white;
   min-width: 44px;
+  margin-left: 0;
 }
 
 .md-button:hover {

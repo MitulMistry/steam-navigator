@@ -1,5 +1,9 @@
 <h1>{{ ctrl.game.data.name }}</h1>
 <img ng-src="{{ ctrl.game.data.header_image }}" class="image-responsive">
+<p class="game-show-pricing" ng-if="ctrl.game.data.price_overview.final > 0">
+  <span class="game-show-discount-percent" ng-if="ctrl.game.data.price_overview.discount_percent">-{{ ctrl.game.data.price_overview.discount_percent }}%</span>
+  <span><strong>{{ ctrl.game.data.price_overview.final / 100 | currency : "$" : 2 }}</strong> <s ng-if="ctrl.game.data.price_overview.discount_percent">{{ ctrl.game.data.price_overview.initial / 100 | currency : "$" : 2  }}</s></span>
+</p>
 <p><md-button ng-href="http://store.steampowered.com/app/{{ ctrl.game.data.steam_appid }}" target="_blank">View on Steam Store</md-button></p>
 <p ng-bind-html="shortDescription"></p>
 
