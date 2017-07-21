@@ -5,7 +5,9 @@
   <span><strong>{{ ctrl.game.data.price_overview.final / 100 | currency : "$" : 2 }}</strong> <s ng-if="ctrl.game.data.price_overview.discount_percent">{{ ctrl.game.data.price_overview.initial / 100 | currency : "$" : 2  }}</s></span>
 </p>
 <p><md-button ng-href="http://store.steampowered.com/app/{{ ctrl.game.data.steam_appid }}" target="_blank">View on Steam Store</md-button></p>
-<p ng-bind-html="shortDescription"></p>
+<p ng-if="!showDetailedDescription" ng-bind-html="shortDescription"></p>
+<p ng-if="showDetailedDescription" ng-bind-html="detailedDescription"></p>
+<p><md-button ng-click="toggleDetailedDescription()"><span ng-if="!showDetailedDescription">Read More</span><span ng-if="showDetailedDescription">Show Less</span></md-button></p>
 
 <!-- <div ng-if="showDetailedDescription" ng-bind-html="detailedDescription"></div> -->
 

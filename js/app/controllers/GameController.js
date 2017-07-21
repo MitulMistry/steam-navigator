@@ -2,10 +2,15 @@ function GameController(game, $scope, $sce, GridService) { //game is injected fr
   var ctrl = this;
   ctrl.game = game;
 
+  $scope.showDetailedDescription = false;
   $scope.shortDescription = $sce.trustAsHtml(game.data.short_description); //https://stackoverflow.com/a/31333196
   $scope.detailedDescription = $sce.trustAsHtml(game.data.detailed_description);
 
   $scope.screenshotGrid = GridService.createGrid(game.data.screenshots, 4);
+
+  $scope.toggleDetailedDescription = function() {
+    $scope.showDetailedDescription = !$scope.showDetailedDescription;
+  }
 
   $scope.getDevelopers = function() {
     return game.data.developers.join(', ');
