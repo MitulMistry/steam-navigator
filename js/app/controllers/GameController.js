@@ -34,50 +34,28 @@ function GameController(game, $scope, $sce, GridService, $mdMedia) { //game is i
     return array.join(', ');
   }
 
-  ctrl.setScreenshotGrid = function() {
-    if ($mdMedia('xs')) {
-      $scope.screenshotGrid = GridService.createGrid(game.data.screenshots, 1);
-    } else if ($mdMedia('sm')) {
-      $scope.screenshotGrid = GridService.createGrid(game.data.screenshots, 2);
-    } else if ($mdMedia('md')) {
-      $scope.screenshotGrid = GridService.createGrid(game.data.screenshots, 3);
-    } else {
-      $scope.screenshotGrid = GridService.createGrid(game.data.screenshots, 4);
-    }
+  $scope.setScreenshotGrid = function() {
+    $scope.screenshotGrid = GridService.setDefaultGrid(game.data.screenshots);
   }
 
-  ctrl.setScreenshotGrid(); //Set grid initially on load
+  $scope.setScreenshotGrid(); //Set grid initially on load
 
-  //breakpoint listeners
+  //material breakpoint listeners
   $scope.$watch(function() { return $mdMedia('xs'); }, function() {
-    ctrl.setScreenshotGrid();
+    $scope.setScreenshotGrid();
   });
 
   $scope.$watch(function() { return $mdMedia('sm'); }, function() {
-    ctrl.setScreenshotGrid();
+    $scope.setScreenshotGrid();
   });
 
   $scope.$watch(function() { return $mdMedia('md'); }, function() {
-    ctrl.setScreenshotGrid();
+    $scope.setScreenshotGrid();
   });
 
   $scope.$watch(function() { return $mdMedia('gt-md'); }, function() {
-    ctrl.setScreenshotGrid();
+    $scope.setScreenshotGrid();
   });
-
-  // $scope.screenshotGrid = ctrl.setScreenshotGrid();
-
-  // $scope.$watch(function() { return $mdMedia(); }, function() {
-  //   ctrl.setScreenshotGrid();
-  // });
-
-  // $scope.$watch(function() { return $mdMedia('xs'); }, function(big) {
-  //   $scope.screenshotGrid = GridService.createGrid(game.data.screenshots, 2);
-  // });
-  //
-  // $scope.$watch(function() { return $mdMedia('layout-gt-md'); }, function(big) {
-  //   $scope.screenshotGrid = GridService.createGrid(game.data.screenshots, 4);
-  // });
 }
 
 angular

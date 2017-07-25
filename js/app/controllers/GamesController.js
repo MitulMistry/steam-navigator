@@ -2,8 +2,6 @@ function GamesController(games, $scope, $state, GridService, $mdMedia) { //games
   var ctrl = this;
   ctrl.games = games;
 
-  // $scope.grid = GridService.createGrid(games, 3);
-
   ctrl.getStateName = function() {
     var stateName = $state.current.name;
 
@@ -18,35 +16,27 @@ function GamesController(games, $scope, $state, GridService, $mdMedia) { //games
     }
   }
 
-  ctrl.setGameGrid = function() {
-    if ($mdMedia('xs')) {
-      $scope.grid = GridService.createGrid(games, 1);
-    } else if ($mdMedia('sm')) {
-      $scope.grid = GridService.createGrid(games, 2);
-    } else if ($mdMedia('md')) {
-      $scope.grid = GridService.createGrid(games, 3);
-    } else {
-      $scope.grid = GridService.createGrid(games, 4);
-    }
+  $scope.setGameGrid = function() {
+    $scope.grid = GridService.setDefaultGrid(games);
   }
 
-  ctrl.setGameGrid(); //Set grid initially on load
+  $scope.setGameGrid(); //Set grid initially on load
 
-  //breakpoint listeners
+  //material breakpoint listeners
   $scope.$watch(function() { return $mdMedia('xs'); }, function() {
-    ctrl.setGameGrid();
+    $scope.setGameGrid();
   });
 
   $scope.$watch(function() { return $mdMedia('sm'); }, function() {
-    ctrl.setGameGrid();
+    $scope.setGameGrid();
   });
 
   $scope.$watch(function() { return $mdMedia('md'); }, function() {
-    ctrl.setGameGrid();
+    $scope.setGameGrid();
   });
 
   $scope.$watch(function() { return $mdMedia('gt-md'); }, function() {
-    ctrl.setGameGrid();
+    $scope.setGameGrid();
   });
 }
 
