@@ -6,8 +6,8 @@ function GridService() {
     items.forEach(function(item, index) {
       row.push(item);
 
-      if( (index + 1) % columns === 0) { //+1  to offset 0 index
-        returnGrid.push(row);
+      if( (index + 1) % columns === 0) { //+1  to offset 0 index // || (index + 1) === items.length
+        returnGrid.push(row); //currently cuts off extra items - i.e. if 10 items and 3x3 grid, will only use 9 items
         row = [];
       }
     });
