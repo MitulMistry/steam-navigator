@@ -48,19 +48,20 @@ function GameController(game, $scope, $sce, GridService, $mdMedia) { //game is i
 
   ctrl.setScreenshotGrid(); //Set grid initially on load
 
-  $scope.$watch(function() { return $mdMedia('xs'); }, function(big) {
+  //breakpoint listeners
+  $scope.$watch(function() { return $mdMedia('xs'); }, function() {
     ctrl.setScreenshotGrid();
   });
 
-  $scope.$watch(function() { return $mdMedia('sm'); }, function(big) {
+  $scope.$watch(function() { return $mdMedia('sm'); }, function() {
     ctrl.setScreenshotGrid();
   });
 
-  $scope.$watch(function() { return $mdMedia('md'); }, function(big) {
+  $scope.$watch(function() { return $mdMedia('md'); }, function() {
     ctrl.setScreenshotGrid();
   });
 
-  $scope.$watch(function() { return $mdMedia('gt-md'); }, function(big) {
+  $scope.$watch(function() { return $mdMedia('gt-md'); }, function() {
     ctrl.setScreenshotGrid();
   });
 
