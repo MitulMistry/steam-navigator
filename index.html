@@ -10,19 +10,27 @@
 </head>
 <body ng-app="app" layout="row" ng-controller="HomeController" ng-cloak>
   <md-sidenav layout="column" class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" md-whiteframe="4">
-    <img src="img/logo.svg" alt="logo">
-    <h2>Steam <span class="normal-weight">Navigator</span></h2>
-    <div class="nav-black-spacer"></div>
-    <a href ui-sref="topSellers" ui-sref-active="active">Top Sellers</a>
-    <a href ui-sref="newReleases" ui-sref-active="active">New Releases</a>
-    <a href ui-sref="specials" ui-sref-active="active">Specials</a>
-    <a href ui-sref="comingSoon" ui-sref-active="active">Coming Soon</a>
-    <div class="nav-black-spacer"></div>
+    <div class="sidenav-content" layout="column">
+      <img src="img/logo.svg" alt="logo">
+      <h2>Steam <span class="normal-weight">Navigator</span></h2>
+      <div class="nav-black-spacer"></div>
+      <a href ui-sref="topSellers" ui-sref-active="active">Top Sellers</a>
+      <a href ui-sref="newReleases" ui-sref-active="active">New Releases</a>
+      <a href ui-sref="specials" ui-sref-active="active">Specials</a>
+      <a href ui-sref="comingSoon" ui-sref-active="active">Coming Soon</a>
+      <div class="nav-black-spacer"></div>
+    </div>
+
+    <div class="sidenav-footer">
+      <p><a href="https://github.com/MitulMistry/steam-navigator" target="_blank">Github repo for this site</a></p>
+      <p>Website &copy; Mitul Mistry {{ date | date:"yyyy" }}</p>
+      <p id="notice">All other materials copyright their respective holders</p>
+    </div>
   </md-sidenav>
 
   <md-content flex layout="column">
     <div>
-      <md-button ng-click="toggleSideNav()" hide-gt-sm>
+      <md-button ng-click="toggleSideNav()" aria-label="Toggle sidebar" hide-gt-sm>
         <i class="fa fa-bars" aria-hidden="true"></i>
       </md-button>
     </div>

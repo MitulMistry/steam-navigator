@@ -134,7 +134,7 @@ md-sidenav  {
   width: 250px;
   height: 100%;
   /*padding: 20px;*/
-  padding: 20px 0 20px 0;
+  padding-top: 20px;
 
   background: #3BBA4D; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(#3BBA4D, #1C5C3D); /* For Safari 5.1 to 6.0 */
@@ -150,23 +150,23 @@ md-sidenav h2 {
   margin: 20px 0 20px 0;
 }
 
-md-sidenav a {
+md-sidenav div.sidenav-content a {
   font-size: 1.2em;
   text-transform: uppercase;
   background-color: black;
   padding: 5px 50px 5px 50px;
 }
 
-md-sidenav a:hover {
+md-sidenav div.sidenav-content a:hover {
   background-color: #161616;
 }
 
-md-sidenav a.active {
+md-sidenav div.sidenav-content a.active {
   color: black;
   background-color: white;
 }
 
-md-sidenav a.active:hover {
+md-sidenav div.sidenav-content a.active:hover {
   color: black;
   background-color: none;
 }
@@ -174,6 +174,34 @@ md-sidenav a.active:hover {
 .nav-black-spacer {
   background-color: black;
   height: 5px;
+}
+
+.sidenav-content {
+  flex: 1 0 auto;
+}
+
+.sidenav-footer {
+  background-color: white;
+  color: black;
+  padding: 5px 15px 5px 15px;
+  /*text-align: center;*/
+}
+
+.sidenav-footer p {
+  font-size: .8em;
+  margin: 0;
+}
+
+.sidenav-footer p#notice {
+  font-size: .6em;
+}
+
+.sidenav-footer a {
+  color: black;
+}
+
+.sidenav-footer a:hover {
+  color: #3BBA4D;
 }
 
 md-content {
