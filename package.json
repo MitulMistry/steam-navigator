@@ -2,7 +2,7 @@
   "name": "steam-navigator",
   "version": "1.0.0",
   "description": "A front end AngularJS web application for viewing the Steam Store",
-  "main": "index.html",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,10 +16,8 @@
     "url": "https://github.com/MitulMistry/steam-navigator/issues"
   },
   "homepage": "https://github.com/MitulMistry/steam-navigator#readme",
-  "devDependencies": {
-    "express": "^4.15.3"
-  },
   "dependencies": {
+    "express": "^4.15.3",
     "bower": "1.8.0"
   },
   "scripts": {
