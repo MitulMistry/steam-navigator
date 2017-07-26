@@ -181,10 +181,10 @@ md-sidenav div.sidenav-content a.active:hover {
 }
 
 .sidenav-footer {
-  background-color: white;
-  color: black;
+  /*background-color: white;*/
+  color: #CCCCCC;
   padding: 5px 15px 5px 15px;
-  /*text-align: center;*/
+  text-align: center;
 }
 
 .sidenav-footer p {
@@ -197,7 +197,7 @@ md-sidenav div.sidenav-content a.active:hover {
 }
 
 .sidenav-footer a {
-  color: black;
+  color: #CCCCCC;
 }
 
 .sidenav-footer a:hover {
