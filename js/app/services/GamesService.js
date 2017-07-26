@@ -1,4 +1,4 @@
-var API_URL = 'http://store.steampowered.com/api';
+var API_URL = 'https://store.steampowered.com/api';
 var featuredCategories;
 
 function GamesService($http) {
