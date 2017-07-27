@@ -1,8 +1,10 @@
 var express = require('express'); //https://github.com/heroku/node-js-getting-started/blob/master/index.js
+var cors = require('cors');
 var app = express();
 
 app.set('port', (process.env.PORT || 5000));
 
+app.use(cors());
 // app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname));
 
