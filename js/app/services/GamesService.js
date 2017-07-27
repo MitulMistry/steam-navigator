@@ -1,4 +1,4 @@
-var API_URL = '/api'; //using Express proxy API to circumvent cross-origin from: 'https://store.steampowered.com/api'
+var API_URL = '/api'; //using Node + Express proxy API to circumvent cross-origin from: 'https://store.steampowered.com/api'
 var featuredCategories;
 
 function GamesService($http) {

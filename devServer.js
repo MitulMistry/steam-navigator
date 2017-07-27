@@ -3,24 +3,24 @@ var cors = require('cors');
 var request = require('request');
 var app = express();
 
-app.use(cors());
+// app.use(cors()); //enable all CORS requests
 app.use(express.static(__dirname));
 
-app.get('/', function(req, resp) {
-  resp.render('index.html');
+app.get('/', function(req, res) { //request, response
+  res.render('index.html');
 });
 
 // API ---
 var API_URL = 'https://store.steampowered.com/api';
 
-app.get('/api/featuredcategories', function(req, resp) {
-  req.pipe(request(API_URL + '/featuredcategories')).pipe(resp);
+app.get('/api/featuredcategories', cors(), function(req, res) {
+  req.pipe(request(API_URL + '/featuredcategories')).pipe(res);
 });
 
-app.get('/api/appdetails/:appids', function(req, resp) {
-  req.pipe(request(API_URL + '/appdetails?appids=' + req.params.appids)).pipe(resp);
+app.get('/api/appdetails/:appids', cors(), function(req, res) {
+  req.pipe(request(API_URL + '/appdetails?appids=' + req.params.appids)).pipe(res);
 });
 
-app.listen(8080);
-
-console.log('Server started at http://localhost:8080');
+app.listen(8080, function() {
+  console.log('Server started at http://localhost:8080');
+});
