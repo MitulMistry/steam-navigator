@@ -1,4 +1,4 @@
-var API_URL = 'https://store.steampowered.com/api';
+var API_URL = '/api'; //using Express proxy API to circumvent cross-origin from: 'https://store.steampowered.com/api'
 var featuredCategories;
 
 function GamesService($http) {
@@ -56,9 +56,8 @@ function GamesService($http) {
   }
 
   this.getGame = function(id) {
-    var data = $http.get(API_URL + '/appdetails/', {
-      params: { appids: id }
-    }).then(function successCallback(response) {
+    var data = $http.get(API_URL + '/appdetails/' + id) //, {params: { appids: id }}
+    .then(function successCallback(response) {
       return response["data"][id.toString()];
     }, function errorCallback(response) {
       console.log("API error");
