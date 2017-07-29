@@ -13,7 +13,7 @@
   <h2>Screenshots</h2>
   <section layout-fill layout="column">
     <div ng-repeat="row in ctrl.screenshotGrid" flex layout="row">
-      <div ng-repeat="screenshot in row" class="screenshot-container"><a ng-href="{{ screenshot.path_full}}" target="_blank"><img ng-src="{{ screenshot.path_thumbnail }}" class="screenshot"></a></div>
+      <div ng-repeat="screenshot in row" class="screenshot-container"><a ng-click="ctrl.showImage($event, screenshot.path_full)"><img ng-src="{{ screenshot.path_thumbnail }}" class="screenshot"></a></div> <!-- ng-href="{{ screenshot.path_full}}" target="_blank"  -->
     </div>
   </section>
 </div>

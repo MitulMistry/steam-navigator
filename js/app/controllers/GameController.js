@@ -1,4 +1,4 @@
-function GameController(game, $scope, $sce, GridService, $mdMedia) { //game is injected from app.js resolve
+function GameController(game, $scope, $sce, GridService, $mdMedia, $mdDialog) { //game is injected from app.js resolve
   var ctrl = this;
   ctrl.game = game.data;
 
@@ -32,6 +32,20 @@ function GameController(game, $scope, $sce, GridService, $mdMedia) { //game is i
     });
 
     return array.join(', ');
+  }
+
+  ctrl.showImage = function(ev, imagePath) {
+    $mdDialog.show({
+      controller: ImageDialogController,
+      templateUrl: 'views/templates/imageDialog.html',
+      parent: angular.element(document.body),
+      targetEvent: ev,
+      locals: {
+        imagePath: imagePath
+      },
+      clickOutsideToClose: true,
+      fullscreen: false // Only for -xs, -sm breakpoints.
+    });
   }
 
   function setScreenshotGrid() {
