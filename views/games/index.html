@@ -1,11 +1,6 @@
 <h1>{{ ctrl.getStateName() }}</h1>
 <section layout-fill layout="column">
-  <div ng-repeat="row in grid" flex layout="row">
-    <!-- <game data="game" ng-repeat="game in ctrl.games"></game> -->
-    <!-- <div ng-repeat="item in row" flex layout="row" layout-align="center center" layout-margin class="box">
-        <h1 class="md-title">{{ item }}</h1>
-        <game data="item"></game>
-    </div> -->
-    <game data="game" ng-repeat="game in row"></game>
+  <div ng-repeat="row in ctrl.grid" flex layout="row">
+    <game data="game" ng-repeat="game in row"></game><!-- <div ng-repeat="item in row" flex layout="row" layout-align="center center" layout-margin class="box"> -->
   </div>
 </section>

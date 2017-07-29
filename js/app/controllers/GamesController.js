@@ -16,27 +16,27 @@ function GamesController(games, $scope, $state, GridService, $mdMedia) { //games
     }
   }
 
-  $scope.setGameGrid = function() {
-    $scope.grid = GridService.setDefaultGrid(games);
+  function setGameGrid() {
+    ctrl.grid = GridService.setDefaultGrid(games); //returns nested grid array, like: [[1,2,3],[4,5,6],[7,8,9]]
   }
 
-  $scope.setGameGrid(); //Set grid initially on load
+  setGameGrid(); //Set grid initially on load
 
   //material breakpoint listeners
   $scope.$watch(function() { return $mdMedia('xs'); }, function() {
-    $scope.setGameGrid();
+    setGameGrid();
   });
 
   $scope.$watch(function() { return $mdMedia('sm'); }, function() {
-    $scope.setGameGrid();
+    setGameGrid();
   });
 
   $scope.$watch(function() { return $mdMedia('md'); }, function() {
-    $scope.setGameGrid();
+    setGameGrid();
   });
 
   $scope.$watch(function() { return $mdMedia('gt-md'); }, function() {
-    $scope.setGameGrid();
+    setGameGrid();
   });
 }
 

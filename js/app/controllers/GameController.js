@@ -1,60 +1,60 @@
 function GameController(game, $scope, $sce, GridService, $mdMedia) { //game is injected from app.js resolve
   var ctrl = this;
-  ctrl.game = game;
+  ctrl.game = game.data;
 
-  $scope.showDetailedDescription = false;
-  $scope.shortDescription = $sce.trustAsHtml(game.data.short_description); //https://stackoverflow.com/a/31333196
-  $scope.detailedDescription = $sce.trustAsHtml(game.data.detailed_description);
+  ctrl.showDetailedDescription = false;
+  ctrl.shortDescription = $sce.trustAsHtml(ctrl.game.short_description); //https://stackoverflow.com/a/31333196
+  ctrl.detailedDescription = $sce.trustAsHtml(ctrl.game.detailed_description);
 
-  $scope.toggleDetailedDescription = function() {
-    $scope.showDetailedDescription = !$scope.showDetailedDescription;
+  ctrl.toggleDetailedDescription = function() {
+    ctrl.showDetailedDescription = !ctrl.showDetailedDescription;
   }
 
-  $scope.getDevelopers = function() {
-    return game.data.developers.join(', ');
+  ctrl.getDevelopers = function() {
+    return ctrl.game.developers.join(', ');
   }
 
-  $scope.getPublishers = function() {
-    return game.data.publishers.join(', ');
+  ctrl.getPublishers = function() {
+    return ctrl.game.publishers.join(', ');
   }
 
-  $scope.getCategories = function() {
-    var array = game.data.categories.map(function(category) {
+  ctrl.getCategories = function() {
+    var array = ctrl.game.categories.map(function(category) {
       return category.description;
     });
 
     return array.join(', ');
   }
 
-  $scope.getGenres = function() {
-    var array = game.data.genres.map(function(genre) {
+  ctrl.getGenres = function() {
+    var array = ctrl.game.genres.map(function(genre) {
       return genre.description;
     });
 
     return array.join(', ');
   }
 
-  $scope.setScreenshotGrid = function() {
-    $scope.screenshotGrid = GridService.setDefaultGrid(game.data.screenshots);
+  function setScreenshotGrid() {
+    ctrl.screenshotGrid = GridService.setDefaultGrid(ctrl.game.screenshots);
   }
 
-  $scope.setScreenshotGrid(); //Set grid initially on load
+  setScreenshotGrid(); //Set grid initially on load
 
   //material breakpoint listeners
   $scope.$watch(function() { return $mdMedia('xs'); }, function() {
-    $scope.setScreenshotGrid();
+    setScreenshotGrid();
   });
 
   $scope.$watch(function() { return $mdMedia('sm'); }, function() {
-    $scope.setScreenshotGrid();
+    setScreenshotGrid();
   });
 
   $scope.$watch(function() { return $mdMedia('md'); }, function() {
-    $scope.setScreenshotGrid();
+    setScreenshotGrid();
   });
 
   $scope.$watch(function() { return $mdMedia('gt-md'); }, function() {
-    $scope.setScreenshotGrid();
+    setScreenshotGrid();
   });
 }
 

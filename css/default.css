@@ -164,6 +164,10 @@ md-sidenav div.sidenav-content a:hover {
 md-sidenav div.sidenav-content a.active {
   color: black;
   background-color: white;
+  transition: all 0s linear;
+  -o-transition: all 0s linear;
+  -moz-transition: all 0s linear;
+  -webkit-transition: all 0s linear;
 }
 
 md-sidenav div.sidenav-content a.active:hover {

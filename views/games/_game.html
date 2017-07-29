@@ -1,7 +1,7 @@
 <div class="game">
-  <a href ui-sref="game({id: game.data.id })"><img ng-src="{{ game.data.large_capsule_image }}"></a>
-  <p ng-if="game.data.final_price > 0">
-    <span class="game-discount-percent" ng-if="game.data.discounted">-{{ game.data.discount_percent }}%</span>
-    <span class="game-pricing">{{ game.data.final_price / 100 | currency : "$" : 2 }} <s ng-if="game.data.discounted">{{ game.data.original_price / 100 | currency : "$" : 2  }}</s></span>
+  <a href ui-sref="game({id: ctrl.data.id })"><img ng-src="{{ ctrl.data.large_capsule_image }}"></a>
+  <p ng-if="ctrl.data.final_price > 0">
+    <span class="game-discount-percent" ng-if="ctrl.data.discounted">-{{ ctrl.data.discount_percent }}%</span>
+    <span class="game-pricing">{{ ctrl.data.final_price / 100 | currency : "$" : 2 }} <s ng-if="ctrl.data.discounted">{{ ctrl.data.original_price / 100 | currency : "$" : 2  }}</s></span>
   </p>
 </div>

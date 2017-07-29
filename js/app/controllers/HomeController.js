@@ -1,8 +1,8 @@
-function HomeController($scope, $mdSidenav) {
+function HomeController($mdSidenav) {
   var ctrl = this;
-  $scope.date = new Date();
+  ctrl.date = new Date();
 
-  $scope.toggleSideNav = function() {
+  ctrl.toggleSideNav = function() {
     $mdSidenav('left').toggle();
   };
 }
