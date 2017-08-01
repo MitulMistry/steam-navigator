@@ -87,6 +87,11 @@ s {
 .screenshot {
   max-width: 100%;
   height: auto;
+  cursor: pointer;
+}
+
+.screenshot:focus {
+  outline: none;
 }
 
 .screenshot-container {
@@ -121,10 +126,12 @@ s {
   -o-transition: opacity ease-in-out .3s;
   transition: opacity ease-in-out .3s;
 }
+
 .animationIf.ng-enter,
 .animationIf.ng-leave.ng-leave-active {
   opacity: 0;
 }
+
 .animationIf.ng-leave,
 .animationIf.ng-enter.ng-enter-active {
   opacity: 1;
@@ -215,4 +222,10 @@ md-content {
   background-repeat: repeat;
   height: 100%;
   padding: 20px;
+}
+
+md-dialog.image-dialog {
+  max-width: 90%;
+  border-radius: 0;
+  background-color: black;
 }
