@@ -1,5 +1,6 @@
 <md-dialog class="image-dialog" aria-label="image">
   <!-- <div class="md-dialog-content"> -->
-    <img class="image-responsive" ng-src="{{ imagePath }}" show-on-load>
+    <img class="image-responsive fade" ng-src="{{ imagePath }}" ng-show="visible" show-on-load>
+    <!-- <p ng-show="!visible" style="color:white; text-align:center;">Loading</p> -->
   <!-- </div> -->
 </md-dialog>

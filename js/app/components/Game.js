@@ -3,8 +3,9 @@ var Game = {
   bindings: { //define arguments being passed to component - bindings for components, scope for directives
     data: '=' //set data to a variable being passed in, i.e. when used: <item data="post"></item>
   },
-  controller: function() { //can add functionality to a controller for this component by injecting dependencies such as a service
+  controller: function($scope) { //can add functionality to a controller for this component by injecting dependencies such as a service
     var ctrl = this;
+    $scope.visible = false;
   },
   controllerAs: 'ctrl' //sets controller to be refered to as game in the template
 };
