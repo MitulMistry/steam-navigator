@@ -18,6 +18,7 @@ function GamesController(games, $scope, $state, GridService, $mdMedia) { //games
 
   function setGameGrid() {
     ctrl.grid = GridService.setDefaultGrid(games); //returns nested grid array, like: [[1,2,3],[4,5,6],[7,8,9]]
+    ctrl.columnWidth = GridService.getColumnWidth();
   }
 
   setGameGrid(); //Set grid initially on load

@@ -50,6 +50,7 @@ function GameController(game, $scope, $sce, GridService, $mdMedia, $mdDialog) { 
 
   function setScreenshotGrid() {
     ctrl.screenshotGrid = GridService.setDefaultGrid(ctrl.game.screenshots);
+    ctrl.columnWidth = GridService.getColumnWidth();
   }
 
   setScreenshotGrid(); //Set grid initially on load
