@@ -234,6 +234,18 @@ md-dialog.image-dialog {
   background-color: black;
 }
 
+.image-loading-div {
+  color:white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-loading-spinner {
+  padding-left: 10px;
+}
+
 .fade.ng-hide {
   opacity: 0;
 }
