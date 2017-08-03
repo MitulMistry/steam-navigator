@@ -79,6 +79,10 @@ s {
   font-size: 1.1em;
 }
 
+.game-show-maxwidth {
+  max-width: 1000px;
+}
+
 .image-responsive {
   max-width: 100%;
   height: auto;

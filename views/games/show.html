@@ -5,8 +5,8 @@
   <span><strong>{{ ctrl.game.price_overview.final / 100 | currency : "$" : 2 }}</strong> <s ng-if="ctrl.game.price_overview.discount_percent">{{ ctrl.game.price_overview.initial / 100 | currency : "$" : 2  }}</s></span>
 </p>
 <p><md-button ng-href="http://store.steampowered.com/app/{{ ctrl.game.steam_appid }}" target="_blank">View on Steam Store</md-button></p>
-<p ng-if="!ctrl.showDetailedDescription" ng-bind-html="ctrl.shortDescription" class="animationIf"></p>
-<p ng-if="ctrl.showDetailedDescription" ng-bind-html="ctrl.detailedDescription" class="animationIf"></p>
+<p ng-if="!ctrl.showDetailedDescription" ng-bind-html="ctrl.shortDescription" class="animationIf game-show-maxwidth"></p>
+<p ng-if="ctrl.showDetailedDescription" ng-bind-html="ctrl.detailedDescription" class="animationIf game-show-maxwidth"></p>
 <p><md-button ng-click="ctrl.toggleDetailedDescription()" aria-label="Toggle detailed description"><span ng-if="!ctrl.showDetailedDescription">Read More</span><span ng-if="ctrl.showDetailedDescription">Show Less</span></md-button></p>
 
 <div ng-if="ctrl.game.screenshots.length > 0">
@@ -19,11 +19,13 @@
   </section>
 </div>
 
-<p class="game-secondary-text"><strong>Release Date:</strong> {{ ctrl.game.release_date.date }}
-</br><strong>Platforms:</strong> <i class="fa fa-windows" aria-hidden="true" title="Windows" ng-if="ctrl.game.platforms.windows"></i><i class="fa fa-apple" aria-hidden="true" title="Mac" ng-if="ctrl.game.platforms.mac"></i><i class="fa fa-linux" aria-hidden="true" title="Linux + SteamOS" ng-if="ctrl.game.platforms.linux"></i></p>
+<div class="game-show-maxwidth">
+  <p class="game-secondary-text"><strong>Release Date:</strong> {{ ctrl.game.release_date.date }}
+  </br><strong>Platforms:</strong> <i class="fa fa-windows" aria-hidden="true" title="Windows" ng-if="ctrl.game.platforms.windows"></i><i class="fa fa-apple" aria-hidden="true" title="Mac" ng-if="ctrl.game.platforms.mac"></i><i class="fa fa-linux" aria-hidden="true" title="Linux + SteamOS" ng-if="ctrl.game.platforms.linux"></i></p>
 
-<p class="game-secondary-text"><strong>Developer:</strong> {{ ctrl.getDevelopers() }}
-</br><strong>Publisher:</strong> {{ ctrl.getPublishers() }}</p>
+  <p class="game-secondary-text"><strong>Developer:</strong> {{ ctrl.getDevelopers() }}
+  </br><strong>Publisher:</strong> {{ ctrl.getPublishers() }}</p>
 
-<p class="game-secondary-text"><strong>Categories:</strong> {{ ctrl.getCategories() }}
-</br><strong>Genres:</strong> {{ ctrl.getGenres() }}</p>
+  <p class="game-secondary-text"><strong>Categories:</strong> {{ ctrl.getCategories() }}
+  </br><strong>Genres:</strong> {{ ctrl.getGenres() }}</p>
+</div>
