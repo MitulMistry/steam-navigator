@@ -3,14 +3,10 @@ var cors = require('cors');
 var request = require('request');
 var app = express();
 
-app.set('port', (process.env.PORT || 5000));
+app.set('port', (process.env.PORT || 5000)); //gets port from environment or else defaults to 5000
 
 // app.use(cors()); //enable all CORS requests
-app.use(express.static(__dirname)); // app.use(express.static(__dirname + '/public'));
-
-// views is directory for all template files
-// app.set('views', __dirname + '/views');
-// app.set('view engine', 'ejs');
+app.use(express.static(__dirname));
 
 app.get('/', function(req, res) { //request, response
   resonse.render('index.html');
