@@ -24,5 +24,13 @@ Node Package Manager (NPM) is used for back end dependencies while Bower is used
 4. Run `bower install`. It will install front end dependencies from the [bower.json file](../master/bower.json).
 5. To run the local dev server at http://localhost:5000, run `node index.js`. It will run the Node/Express application in the [index.js file](../master/index.js).
 
+## Testing
+The test framework uses [Jasmine](https://jasmine.github.io/) and [Karma](https://karma-runner.github.io/) as the test runner.
+
+Tests are found under the [tests folder](../master/tests). Currently the test suite is incomplete.
+
+On Linux, you can install the Karma CLI via the command:
+`sudo npm install -g karma-cli`. Then, after NPM and Bower dependencies have been installed, run the tests with `karma start`.
+
 ## License
 This project is open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
