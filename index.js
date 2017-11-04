@@ -9,7 +9,7 @@ app.set('port', (process.env.PORT || 5000)); //gets port from environment or els
 app.use(express.static(__dirname));
 
 app.get('/', function(req, res) { //request, response
-  resonse.render('index.html');
+  res.render('index.html');
 });
 
 // API ---
