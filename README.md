@@ -1,6 +1,8 @@
 # Steam Navigator
 A front end AngularJS web application for viewing the Steam Store.
 
+![screenshot](readme_steam_navigator.jpg)
+
 ## Demo App
 You can see a demo version of the application deployed to Heroku here: https://steam-navigator.herokuapp.com/
 
