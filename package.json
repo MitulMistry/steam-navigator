@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "./node_modules/bower/bin/bower install --production"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -19,16 +18,20 @@
   },
   "homepage": "https://github.com/MitulMistry/steam-navigator#readme",
   "dependencies": {
-    "bower": "1.8.0",
+    "angular": "^1.7.4",
+    "angular-material": "^1.1.10",
+    "angular-ui-router": "^1.0.20",
     "cors": "^2.8.4",
-    "express": "^4.15.3",
-    "request": "^2.81.0"
+    "express": "^4.16.3",
+    "font-awesome": "^4.7.0",
+    "request": "^2.88.0"
   },
   "devDependencies": {
-    "jasmine-core": "^2.7.0",
-    "karma": "^1.7.0",
+    "angular-mocks": "^1.7.4",
+    "jasmine-core": "^3.2.1",
+    "karma": "^3.0.0",
     "karma-chrome-launcher": "^2.2.0",
-    "karma-jasmine": "^1.1.0",
-    "karma-spec-reporter": "0.0.31"
+    "karma-jasmine": "^1.1.2",
+    "karma-spec-reporter": "0.0.32"
   }
 }
