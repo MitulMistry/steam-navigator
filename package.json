@@ -5,6 +5,9 @@
   "private": true,
   "main": "server.js",
   "scripts": {
+    "build": "webpack --config webpack.prod.js",
+    "dev": "webpack --config webpack.dev.js && npm run start",
+    "postinstall": "webpack --config webpack.prod.js",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
