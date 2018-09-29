@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "A front end AngularJS web application for viewing the Steam Store",
   "private": true,
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
