@@ -2,6 +2,7 @@
   "name": "steam-navigator",
   "version": "1.0.0",
   "description": "A front end AngularJS web application for viewing the Steam Store",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -30,11 +31,37 @@
     "request": "^2.88.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
     "angular-mocks": "^1.7.4",
+    "babel-loader": "^8.0.4",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^1.0.0",
+    "dotenv": "^6.0.0",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "inline-source-map": "^0.6.2",
     "jasmine-core": "^3.2.1",
     "karma": "^3.0.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-jasmine": "^1.1.2",
-    "karma-spec-reporter": "0.0.32"
+    "karma-spec-reporter": "0.0.32",
+    "mini-css-extract-plugin": "^0.4.3",
+    "node-sass": "^4.8.3",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "sass-loader": "^7.1.0",
+    "source-map": "^0.7.3",
+    "style-loader": "^0.23.0",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "url-loader": "^1.1.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-middleware": "^3.4.0",
+    "webpack-dev-server": "^3.1.9",
+    "webpack-hot-middleware": "^2.22.0",
+    "webpack-merge": "^4.1.2"
+  },
+  "engines": {
+    "node": "8.9.1"
   }
 }
