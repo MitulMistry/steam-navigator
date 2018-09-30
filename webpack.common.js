@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: './app/index.js'
+    app: './app/app.js'
   },
   module: {
     rules: [
@@ -34,7 +34,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      template: __dirname + '/app/index.html',
+      template: __dirname + '/index.html',
       filename: 'index.html',
       inject: 'body'
     })
