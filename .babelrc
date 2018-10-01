@@ -6,5 +6,6 @@
         "useBuiltIns": "entry"
       }
     ]
-  ]
+  ],
+  "plugins": ["angularjs-annotate"]
 }

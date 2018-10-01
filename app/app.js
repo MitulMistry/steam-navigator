@@ -1,7 +1,33 @@
+import 'angular-material/angular-material.css';
+import 'font-awesome/css/font-awesome.css';
+import '../assets/css/default.css';
+
+import angular from 'angular';
+import 'angular-ui-router';
+
+import 'angular-animate';
+import 'angular-aria';
+import 'angular-messages';
+import 'angular-material';
+
+// import './controllers/HomeController';
+// import './controllers/GameController';
+// import './controllers/GamesController';
+// import './controllers/ImageDialogController';
+import GamesService from './services/GamesService';
+// import GridService from './services/GridService';
+// import './components/Game';
+// import './components/Screenshot';
+// import './directives/ShowOnLoad';
+
+
+
+// import './controllers/HomeController';
+
 angular
   .module('app', [ //define module and include dependencies
     'ui.router', //for routing
-    'ngMaterial' //Angular material
+    'ngMaterial', //Angular material
   ])
   .config(function($stateProvider, $urlRouterProvider){ //inject $stateProvider for ui-router and $urlRouterProvider for 'otherwise' method
     $stateProvider

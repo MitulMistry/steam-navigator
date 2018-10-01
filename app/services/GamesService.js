@@ -1,3 +1,5 @@
+import angular from 'angular';
+
 var API_URL = '/api'; //using Node + Express proxy API to circumvent cross-origin request from: 'https://store.steampowered.com/api'
 var featuredCategories;
 
@@ -62,6 +64,7 @@ function GamesService($http) {
   }
 }
 
-angular
-  .module('app')
-  .service('GamesService', GamesService);
+export default angular
+  .module('services.games-service', [])
+  .service('GamesService', GamesService)
+  .name;
