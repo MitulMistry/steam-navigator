@@ -22,9 +22,7 @@ Node Package Manager (NPM) is used for back end dependencies while Bower is used
 
 1. Install [Node.js](https://nodejs.org/). NPM comes packaged with it.
 2. Run `npm install` in the command line while in the project directory. It will install dependencies from the [package.json file](../master/package.json).
-3. Install [Bower](https://bower.io/).
-4. Run `bower install`. It will install front end dependencies from the [bower.json file](../master/bower.json).
-5. To run the local dev server at http://localhost:5000, run `node index.js`. It will run the Node/Express application in the [index.js file](../master/index.js).
+3. To run the local dev server at http://localhost:5000, run `npm run start`. It will run the Node/Express application in the [index.js file](../master/index.js).
 
 ## Testing
 The test framework uses [Jasmine](https://jasmine.github.io/) and [Karma](https://karma-runner.github.io/) as the test runner.
