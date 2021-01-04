@@ -64,6 +64,8 @@ function GamesService($http) {
   }
 }
 
+GamesService.$inject = ['$http']; //explicit dependency injection for Webpack JS minification
+
 export default angular
   .module('services.games-service', [])
   .service('GamesService', GamesService)

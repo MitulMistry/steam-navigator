@@ -7,6 +7,8 @@ function HomeController($mdSidenav) {
   };
 }
 
+HomeController.$inject = ['$mdSidenav']; //explicit dependency injection for Webpack JS minification
+
 angular
   .module('app')
   .controller('HomeController', HomeController);

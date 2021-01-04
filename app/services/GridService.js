@@ -42,6 +42,8 @@ function GridService($mdMedia) {
   }
 }
 
+GridService.$inject = ['$mdMedia']; //explicit dependency injection for Webpack JS minification
+
 export default angular
   .module('services.grid-services')
   .service('GridService', GridService)
