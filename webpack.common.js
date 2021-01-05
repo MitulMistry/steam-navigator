@@ -15,12 +15,30 @@ module.exports = {
       },
       {
         test: /\.(png|jp?g|gif|svg)$/,
+        include: [
+          path.resolve(__dirname, 'assets/img')
+        ],
         use: [
           {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'images/'
+              outputPath: 'images/'              
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(svg|eot|woff|woff2|ttf)$/, //For Font Awesome font files
+        include: [
+          path.resolve(__dirname, 'node_modules')
+        ],
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/'              
             }
           }
         ]
