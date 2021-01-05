@@ -1,3 +1,5 @@
+import imageDialogTemplate from '../../views/templates/imageDialog.html';
+
 function GameController(game, $scope, $sce, GridService, $mdMedia, $mdDialog) { //game is injected from app.js resolve
   var ctrl = this;
   ctrl.game = game.data;
@@ -37,7 +39,7 @@ function GameController(game, $scope, $sce, GridService, $mdMedia, $mdDialog) { 
   ctrl.showImage = function(ev, imagePath) {
     $mdDialog.show({
       controller: ImageDialogController,
-      templateUrl: 'views/templates/imageDialog.html',
+      template: imageDialogTemplate,
       parent: angular.element(document.body),
       targetEvent: ev,
       locals: {

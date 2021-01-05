@@ -25,7 +25,7 @@ import 'angular-aria';
 import 'angular-messages';
 import 'angular-material';
 
-//Templates
+//Templates - imported in individual files where they're used
 
 //Application files
 import app from './app'; //import app module first so following elements can access it

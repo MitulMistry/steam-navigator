@@ -14,6 +14,10 @@ module.exports = {
         loader: 'babel-loader'
       },
       {
+        test: /\.html$/i,
+        loader: 'html-loader',
+      },
+      {
         test: /\.(png|jp?g|gif|svg)$/,
         include: [
           path.resolve(__dirname, 'assets/img')

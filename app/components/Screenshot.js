@@ -1,5 +1,7 @@
+import screenshotTemplate from '../../views/games/_screenshot.html';
+
 var Screenshot = {
-  templateUrl: 'views/games/_screenshot.html',
+  template: screenshotTemplate,
   bindings: { //define arguments being passed to component - bindings for components, scope for directives
     data: '=' //set data to a variable being passed in, i.e. when used: <item data="post"></item>
   },

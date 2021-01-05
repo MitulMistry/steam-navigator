@@ -1,3 +1,6 @@
+import gamesIndexTemplate from '../views/games/index.html';
+import gamesShowTemplate from '../views/games/show.html';
+
 angular
   .module('app', [ //define module and include dependencies
     'ui.router', //for routing
@@ -7,7 +10,7 @@ angular
     $stateProvider
       .state('topSellers', { //create a ui-router state
         url: '/top',
-        templateUrl: 'views/games/index.html',
+        template: gamesIndexTemplate,
         controller: 'GamesController as ctrl', //set controller for this route (equavelent of using <ng-controller="..."> in template)
         resolve: { //execute this code before the template is rendered
           games: ['GamesService', function (GamesService) {  //set games equal to GamesService.getTopSellers() to be used in the template
@@ -17,7 +20,7 @@ angular
       })
       .state('newReleases', {
         url: '/new',
-        templateUrl: 'views/games/index.html',
+        template: gamesIndexTemplate,
         controller: 'GamesController as ctrl',
         resolve: {
           games: ['GamesService', function (GamesService) {
@@ -27,7 +30,7 @@ angular
       })
       .state('specials', {
         url: '/specials',
-        templateUrl: 'views/games/index.html',
+        template: gamesIndexTemplate,
         controller: 'GamesController as ctrl',
         resolve: {
           games: ['GamesService', function (GamesService) {
@@ -37,7 +40,7 @@ angular
       })
       .state('comingSoon', {
         url: '/coming',
-        templateUrl: 'views/games/index.html',
+        template: gamesIndexTemplate,
         controller: 'GamesController as ctrl',
         resolve: {
           games: ['GamesService', function (GamesService) {
@@ -47,7 +50,7 @@ angular
       })
       .state('game', {
         url: '/games/:id',
-        templateUrl: 'views/games/show.html',
+        template: gamesShowTemplate,
         controller: 'GameController as ctrl',
         resolve: {
           game: ['$stateParams', 'GamesService', function ($stateParams, GamesService) {
