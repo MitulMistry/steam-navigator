@@ -36,6 +36,10 @@ s {
   font-weight: 400;
 }
 
+#logo {
+  height: 110px;
+}
+
 .game {
   margin: 6px 6px 30px 6px;
 }
@@ -222,7 +226,7 @@ md-sidenav div.sidenav-content a.active:hover {
 md-content {
   color: white;
   background-color: #222222;
-  background-image: url("../img/bg01.png");
+  background-image: url("../../assets/img/bg01.png");
   background-repeat: repeat;
   height: 100%;
   padding: 20px;
