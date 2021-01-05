@@ -1,3 +1,5 @@
+//Use this file to load (import) all necessary files for application in correct order via Webpack
+//This file is defined as entry for application in webpack.common.js config file
 import 'angular-material/angular-material.css';
 import 'font-awesome/css/font-awesome.css';
 import '../assets/css/default.css';
