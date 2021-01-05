@@ -31,9 +31,9 @@ import 'angular-material';
 import app from './app'; //import app module first so following elements can access it
 
 import HomeController from './controllers/HomeController';
+// import ImageDialogController from './controllers/ImageDialogController'; //used directly in GameController
 import GameController from './controllers/GameController';
 import GamesController from './controllers/GamesController';
-import ImageDialogController from './controllers/ImageDialogController';
 import GamesService from './services/GamesService';
 import GridService from './services/GridService';
 import Game from './components/Game';
