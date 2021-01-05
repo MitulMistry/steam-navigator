@@ -1,5 +1,3 @@
-import angular from 'angular';
-
 function GridService($mdMedia) {
   this.createGrid = function(items, columns) { //grid needs to be something like: $scope.grid = [[1,2,3],[4,5,6],[7,8,9]];
     var returnGrid = [];
@@ -44,7 +42,6 @@ function GridService($mdMedia) {
 
 GridService.$inject = ['$mdMedia']; //explicit dependency injection for Webpack JS minification
 
-export default angular
-  .module('services.grid-services')
-  .service('GridService', GridService)
-  .name;
+angular
+  .module('app')
+  .service('GridService', GridService);

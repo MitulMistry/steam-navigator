@@ -1,9 +1,7 @@
-import angular from 'angular';
-
-var API_URL = '/api'; //using Node + Express proxy API to circumvent cross-origin request from: 'https://store.steampowered.com/api'
-var featuredCategories;
-
 function GamesService($http) {
+  var API_URL = '/api'; //using Node + Express proxy API to circumvent cross-origin request from: 'https://store.steampowered.com/api'
+  var featuredCategories;
+
   this.getFeaturedCategories = function() {
     if (!featuredCategories) { //If the response hasn't already been stored
       featuredCategories = $http.get(API_URL + '/featuredcategories'); //store the response in the variable
@@ -66,7 +64,6 @@ function GamesService($http) {
 
 GamesService.$inject = ['$http']; //explicit dependency injection for Webpack JS minification
 
-export default angular
-  .module('services.games-service', [])
-  .service('GamesService', GamesService)
-  .name;
+angular
+  .module('app')
+  .service('GamesService', GamesService);
