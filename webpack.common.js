@@ -56,7 +56,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      template: __dirname + '/index.html',
+      template: __dirname + '/views/index.html',
       filename: 'index.html',
       inject: 'body'
     })
