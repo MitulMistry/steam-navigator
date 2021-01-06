@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -34,6 +34,10 @@ s {
 
 .normal-weight {
   font-weight: 400;
+}
+
+#logo {
+  height: 110px;
 }
 
 .game {
@@ -222,7 +226,7 @@ md-sidenav div.sidenav-content a.active:hover {
 md-content {
   color: white;
   background-color: #222222;
-  background-image: url("../img/bg01.png");
+  background-image: url("../../assets/img/bg01.png");
   background-repeat: repeat;
   height: 100%;
   padding: 20px;

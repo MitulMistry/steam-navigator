@@ -4,6 +4,8 @@ function ImageDialogController($scope, $mdDialog, imagePath) {
   $scope.visible = false;
 }
 
+ImageDialogController.$inject = ['$scope', '$mdDialog', 'imagePath']; //explicit dependency injection for Webpack JS minification
+
 angular
   .module('app')
   .controller('ImageDialogController', ImageDialogController);

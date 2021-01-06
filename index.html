@@ -3,15 +3,12 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Steam Navigator</title>
-  <link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css">
-  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/default.css">
 </head>
 
-<body ng-app="app" layout="row" ng-controller="HomeController as ctrl" ng-cloak>
+<body ng-app="app" layout="row" ng-controller="HomeController as ctrl" ng-cloak ng-strict-di>
   <md-sidenav layout="column" class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" md-whiteframe="4">
     <div class="sidenav-content" layout="column">
-      <img src="img/logo.svg" alt="logo">
+      <img src="assets/img/logo.svg" alt="logo" id="logo">
       <h2>Steam <span class="normal-weight">Navigator</span></h2>
       <div class="nav-black-spacer"></div>
       <a href ui-sref="topSellers" ui-sref-active="active">Top Sellers</a>
@@ -36,29 +33,5 @@
     </div>
     <ui-view></ui-view><!-- current view content -->
   </md-content>
-
-  <!-- Angular.js libraries -->
-  <script src="node_modules/angular/angular.min.js"></script>
-  <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
-
-  <!-- Angular Material dependencies -->
-  <script src="node_modules/angular-animate/angular-animate.min.js"></script>
-  <script src="node_modules/angular-aria/angular-aria.min.js"></script>
-  <script src="node_modules/angular-messages/angular-messages.min.js"></script>
-
-  <!-- Angular Material library -->
-  <script src="node_modules/angular-material/angular-material.min.js"></script>
-
-  <!-- Angular application items -->
-  <script src="js/app/app.js"></script>
-  <script src="js/app/controllers/HomeController.js"></script>
-  <script src="js/app/controllers/GameController.js"></script>
-  <script src="js/app/controllers/GamesController.js"></script>
-  <script src="js/app/controllers/ImageDialogController.js"></script>
-  <script src="js/app/services/GamesService.js"></script>
-  <script src="js/app/services/GridService.js"></script>
-  <script src="js/app/components/Game.js"></script>
-  <script src="js/app/components/Screenshot.js"></script>
-  <script src="js/app/directives/ShowOnLoad.js"></script>
 </body>
 </html>

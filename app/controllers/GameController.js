@@ -1,3 +1,5 @@
+import imageDialogTemplate from '../../views/templates/imageDialog.html';
+
 function GameController(game, $scope, $sce, GridService, $mdMedia, $mdDialog) { //game is injected from app.js resolve
   var ctrl = this;
   ctrl.game = game.data;
@@ -37,7 +39,7 @@ function GameController(game, $scope, $sce, GridService, $mdMedia, $mdDialog) { 
   ctrl.showImage = function(ev, imagePath) {
     $mdDialog.show({
       controller: ImageDialogController,
-      templateUrl: 'views/templates/imageDialog.html',
+      template: imageDialogTemplate,
       parent: angular.element(document.body),
       targetEvent: ev,
       locals: {
@@ -46,6 +48,14 @@ function GameController(game, $scope, $sce, GridService, $mdMedia, $mdDialog) { 
       clickOutsideToClose: true,
       fullscreen: false // Only for -xs, -sm breakpoints.
     });
+
+    function ImageDialogController($scope, $mdDialog, imagePath) { //pasted here directly from HomeController.js because Webpack won't import correctly
+      var ctrl = this;
+      $scope.imagePath = imagePath;
+      $scope.visible = false;
+    }
+
+    ImageDialogController.$inject = ['$scope', '$mdDialog', 'imagePath']; //explicit dependency injection for Webpack JS minification
   }
 
   function setScreenshotGrid() {
@@ -72,6 +82,8 @@ function GameController(game, $scope, $sce, GridService, $mdMedia, $mdDialog) { 
     setScreenshotGrid();
   });
 }
+
+GameController.$inject = ['game', '$scope', '$sce', 'GridService', '$mdMedia', '$mdDialog']; //explicit dependency injection for Webpack JS minification
 
 angular
   .module('app')

@@ -41,6 +41,8 @@ function GamesController(games, $scope, $state, GridService, $mdMedia) { //games
   });
 }
 
+GamesController.$inject = ['games', '$scope', '$state', 'GridService', '$mdMedia']; //explicit dependency injection for Webpack JS minification
+
 angular
   .module('app')
   .controller('GamesController', GamesController);

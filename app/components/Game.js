@@ -1,5 +1,7 @@
+import gameTemplate from '../../views/games/_game.html';
+
 var Game = {
-  templateUrl: 'views/games/_game.html',
+  template: gameTemplate,
   bindings: { //define arguments being passed to component - bindings for components, scope for directives
     data: '=' //set data to a variable being passed in, i.e. when used: <item data="post"></item>
   },
