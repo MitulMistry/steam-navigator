@@ -226,7 +226,7 @@ md-sidenav div.sidenav-content a.active:hover {
 md-content {
   color: white;
   background-color: #222222;
-  background-image: url("../../assets/img/bg01.png");
+  background-image: url("../images/bg01.png");
   background-repeat: repeat;
   height: 100%;
   padding: 20px;

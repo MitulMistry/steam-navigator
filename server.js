@@ -20,7 +20,7 @@ if (process.env.NODE_ENV !== 'production') { //check for development environment
 app.set('port', (process.env.PORT || 5000)); //gets port from environment or else defaults to 5000
 
 // app.use(cors()); //enable all CORS requests
-app.use(express.static(__dirname));
+app.use(express.static(__dirname + '/dist'));
 
 app.get('/', function(req, res) { //request, response
   res.render('index.html');
