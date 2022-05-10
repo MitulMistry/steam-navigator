@@ -9,7 +9,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.js$/i,
         exclude: /node_modules/,
         loader: 'babel-loader'
       },
@@ -17,10 +17,33 @@ module.exports = {
         test: /\.html$/i,
         loader: 'html-loader',
       },
+      // Use Webpack 5 Asset Modules for images and fonts instead of file-loader
+      {
+        test: /\.(png|jp?g|gif|svg)$/i,
+        include: [
+          path.resolve(__dirname, 'assets/images')
+        ],
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[hash][ext]'
+        }
+      },
+      // For Font Awesome font files
+      {
+        test: /\.(svg|eot|woff|woff2|ttf)$/i,
+        include: [
+          path.resolve(__dirname, 'node_modules')
+        ],
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name][ext]'
+        }
+      },
+      // Still use file-loader for images in CSS file
       {
         test: /\.(png|jp?g|gif|svg)$/,
         include: [
-          path.resolve(__dirname, 'assets/images')
+          path.resolve(__dirname, 'assets/css-images')
         ],
         use: [
           {
@@ -33,22 +56,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(svg|eot|woff|woff2|ttf)$/, // For Font Awesome font files
-        include: [
-          path.resolve(__dirname, 'node_modules')
-        ],
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'fonts/'
-            }
-          }
-        ]
-      },
-      {
-        test: /\.css$/,
+        test: /\.css$/i,
         use: [{
           loader: 'style-loader' // creates style nodes from JS strings
         }, {

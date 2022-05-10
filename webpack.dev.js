@@ -9,7 +9,7 @@ module.exports = merge(common, {
   },
   module: {
     rules: [{
-      test: /\.scss$/,
+      test: /\.scss$/i,
       use: [{
         loader: 'style-loader' // creates style nodes from JS strings
       }, {

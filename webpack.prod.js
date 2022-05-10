@@ -1,7 +1,7 @@
 const { merge } = require('webpack-merge');
 const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
@@ -23,7 +23,7 @@ module.exports = merge(common, {
   ],
   module: {
     rules: [{
-      test: /\.scss$/,
+      test: /\.scss$/i,
       use: [{
         loader: MiniCssExtractPlugin.loader // extract css to separate file
       }, {
