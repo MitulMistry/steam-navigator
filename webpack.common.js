@@ -17,7 +17,8 @@ module.exports = {
         test: /\.html$/i,
         loader: 'html-loader',
       },
-      // Use Webpack 5 Asset Modules for images and fonts instead of file-loader
+      // Use Webpack 5 Asset Modules for images and fonts instead of file-loader.
+      // Can't use [hash] instead of [name] for filename for background image in CSS file.
       {
         test: /\.(png|jp?g|gif|svg)$/i,
         include: [
@@ -25,9 +26,9 @@ module.exports = {
         ],
         type: 'asset/resource',
         generator: {
-          filename: 'images/[hash][ext]'
+          filename: 'images/[name][ext]'
         }
-      },
+      },      
       // For Font Awesome font files
       {
         test: /\.(svg|eot|woff|woff2|ttf)$/i,
@@ -38,22 +39,6 @@ module.exports = {
         generator: {
           filename: 'fonts/[name][ext]'
         }
-      },
-      // Still use file-loader for images in CSS file
-      {
-        test: /\.(png|jp?g|gif|svg)$/,
-        include: [
-          path.resolve(__dirname, 'assets/css-images')
-        ],
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'images/'
-            }
-          }
-        ]
       },
       {
         test: /\.css$/i,

@@ -2,7 +2,7 @@
 //This file is defined as entry for application in webpack.common.js config file
 
 //Images
-import '../assets/css-images/bg01.png';
+import '../assets/images/bg01.png';
 import '../assets/images/logo.svg';
 import '../assets/images/spinner.gif';
 
