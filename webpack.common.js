@@ -1,5 +1,5 @@
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -27,13 +27,13 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'images/'              
+              outputPath: 'images/'
             }
           }
         ]
       },
       {
-        test: /\.(svg|eot|woff|woff2|ttf)$/, //For Font Awesome font files
+        test: /\.(svg|eot|woff|woff2|ttf)$/, // For Font Awesome font files
         include: [
           path.resolve(__dirname, 'node_modules')
         ],
@@ -42,19 +42,28 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'fonts/'              
+              outputPath: 'fonts/'
             }
           }
         ]
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader?url=false'
+        use: [{
+          loader: 'style-loader' // creates style nodes from JS strings
+        }, {
+          loader: 'css-loader', // translates CSS into CommonJS
+          options: {
+            url: false
+          }
+        }]
       }
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin({
+      cleanAfterEveryBuildPatterns: ['dist']
+    }),
     new HtmlWebpackPlugin({
       template: __dirname + '/views/index.html',
       filename: 'index.html',
