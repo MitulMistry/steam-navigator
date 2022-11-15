@@ -4,7 +4,7 @@
 Users can explore trending games and new releases, as well as see sales and discounts.
 
 ## Demo App
-You can see a demo version of the application deployed to Heroku here: https://steam-navigator.herokuapp.com/
+You can see a demo version of the application deployed to [Cyclic](https://app.cyclic.sh/) here: https://steam-navigator.cyclic.app/
 
 ## Functionality
 It leverages the [Steam Store web API](https://wiki.teamfortress.com/wiki/User:RJackson/StorefrontAPI) and displays top selling games in a responsive interface. Users can view different categories for games with a side navigation and get more information for individual games. Game pages are routed via Steam Store IDs and include parsed HTML descriptions and collections of screenshots.
@@ -19,12 +19,11 @@ It leverages the [Steam Store web API](https://wiki.teamfortress.com/wiki/User:R
 - Images are loaded then animated in to prevent loading distortions in the image grids. Game thumbnails and screen shot thumbnails are modified with a [directive](../master/app/directives/ShowOnLoad.js) which triggers a controller scope variable and displays the image when it has loaded via ng-show in the template. That in turn triggers ngAnimate CSS animations to fade the fully loaded component template in.
 
 ## Commands
+`npm run start` - Build for development and run Express server. Code changes will be implemented automatically through hot reloading.
 
 `npm run build` - Use Webpack to build for production.
 
-`npm run start` - Run the Express server via Node.
-
-`npm run dev` - Build for development and run Express server. Code changes will be implemented automatically through hot reloading.
+`npm run serve` - Run the Express server via Node.
 
 ## Install Instructions
 Node Package Manager (NPM) is used for dependencies. To install the application locally, follow these instructions:
