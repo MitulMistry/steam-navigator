@@ -6,9 +6,9 @@
   "main": "server.js",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
-    "start": "webpack --config webpack.dev.js && npm run serve",
+    "dev": "webpack --config webpack.dev.js && npm run start",
     "postinstall": "webpack --config webpack.prod.js",
-    "serve": "node server.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -51,7 +51,7 @@
     "karma-chrome-launcher": "^3.1.1",
     "karma-jasmine": "^5.1.0",
     "karma-spec-reporter": "0.0.34",
-    "mini-css-extract-plugin": "^2.6.1",
+    "mini-css-extract-plugin": "^2.7.0",
     "node-sass": "^7.0.3",
     "sass-loader": "^12.6.0",
     "source-map": "^0.7.4",
